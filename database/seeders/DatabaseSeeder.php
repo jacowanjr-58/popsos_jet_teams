@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use database\PermissionSeeder;
+use Database\Seeders\PermissionSeeder as SeedersPermissionSeeder;
+use Database\Seeders\roles_teams_users as roles_teams_users;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,8 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->withPersonalTeam()->create();
+        $this->call([
+        SeedersPermissionSeeder::class,
+        SeedRolesTeamsUsers::class,
+        // Add other seeders here
+    ]);
 
-       
+
     }
 }
