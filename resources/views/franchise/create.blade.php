@@ -1,0 +1,1 @@
+<h1>Create Franchise</h1><form method='POST' action='{{ route('franchise.store') }}'>@csrf ...</form>

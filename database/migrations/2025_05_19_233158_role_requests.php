@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('desired_role');
-            $table->json('franchisee_ids'); // multiple allowed for franchise_admin
+            $table->json('franchise_ids'); // multiple allowed for franchise_admin
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
 });

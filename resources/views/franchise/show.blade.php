@@ -1,0 +1,1 @@
+<h1>{{ $franchise->business_name }}</h1>

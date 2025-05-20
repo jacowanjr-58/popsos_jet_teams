@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class RoleRequest extends Model
 {
-    protected $fillable = ['user_id', 'desired_role', 'franchisee_ids', 'status'];
+    protected $fillable = ['user_id', 'desired_role', 'franchise_ids', 'status'];
     protected $casts = [
-        'franchisee_ids' => 'array',
+        'franchise_ids' => 'array',
     ];
 
     public function user() {

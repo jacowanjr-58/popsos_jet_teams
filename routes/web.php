@@ -10,6 +10,9 @@ use App\Http\Controllers\RoleRequestController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\EnsureUserHasRole;
+use App\Http\Controllers\FranchiseController;
+
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -53,6 +56,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 
     });
+
+
+
+        Route::middleware(['auth', 'can:add-franchise'])->group(function () {
+            Route::resource('franchise', FranchiseController::class);
+        });
 
    /*  Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('dashboard'); */

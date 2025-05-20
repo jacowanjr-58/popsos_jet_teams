@@ -46,7 +46,7 @@ class RoleRequestController extends Controller
     {
         $request->validate([
             'desired_role' => 'required|in:super_user,corporate_admin,franchise_admin,franchise_manager,franchise_staff',
-            'franchisee_ids' => 'required|array|min:1'
+            'franchise_ids' => 'required|array|min:1'
         ]);
 
         $user = Auth::user();
@@ -61,7 +61,7 @@ class RoleRequestController extends Controller
         RoleRequest::create([
             'user_id' => $user->id,
             'desired_role' => $request->desired_role,
-            'franchisee_ids' => $request->franchisee_ids,
+            'franchise_ids' => $request->franchise_ids,
         ]);
 
         return redirect()->route('dashboard')->with('success', 'Role request submitted.');
@@ -104,7 +104,7 @@ class RoleRequestController extends Controller
         $this->authorize('canApproveRoles', User::class);
         $request->update(['status' => 'approved']);
         $request->user->assignRole($request->desired_role);
-        foreach ($request->franchisee_ids as $fid) {
+        foreach ($request->franchise_ids as $fid) {
             $request->user->teams()->attach($fid);
         }
         return back()->with('success', 'Role approved');

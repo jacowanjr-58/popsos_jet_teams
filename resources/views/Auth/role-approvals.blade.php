@@ -27,7 +27,7 @@
                                 {{ $request->user->email }}
                             </a>
                         </td>
-                        <td class="py-2 px-4 border-b" align="center">{{ implode(', ', $request->franchisee_ids) }}</td>
+                        <td class="py-2 px-4 border-b" align="center">{{ implode(', ', $request->franchise_ids) }}</td>
                         <td class="py-2 px-4 border-b" align="center">{{ ucfirst($request->status) }}</td>
                         <td class="py-2 px-4 border-b" align="center">
                             <form method="POST" action="{{ route('role-request.approve', $request) }}" class="inline">@csrf
@@ -65,7 +65,7 @@
                         </a>
                     </td>
                     <td class="py-2 px-4 border-b" align="center">{{ $request->desired_role }}</td>
-                    <td class="py-2 px-4 border-b" align="center">{{ implode(', ', $request->franchisee_ids) }}</td>
+                    <td class="py-2 px-4 border-b" align="center">{{ implode(', ', $request->franchise_ids) }}</td>
                     <td class="py-2 px-4 border-b" align="center">{{ ucfirst($request->status) }}</td>
                     <td class="py-2 px-4 border-b" align="center">
                         <form method="POST" action="{{ route('role-request.approve', $request) }}" class="inline">@csrf

@@ -51,6 +51,7 @@ return [
             'role.assign',
             'role.request',
             'role.approve',
+
         ],
     ],
     'Reporting' => [
@@ -60,6 +61,15 @@ return [
             'report.view_inventory',
             'report.view_events',
             'report.export',
+        ],
+    ],
+     'Franchise Settings' => [
+        'icon' => '🏪',
+        'permissions' => [
+            'franchise.create',
+            'franchise.update',
+            'franchise.delete',
+            'franchise.view',
         ],
     ],
     'Settings' => [

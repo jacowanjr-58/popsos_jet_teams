@@ -1,0 +1,1 @@
+<h1>Edit Franchise</h1><form method='POST' action='{{ route('franchise.update', $franchise) }}'>@csrf @method('PUT') ...</form>

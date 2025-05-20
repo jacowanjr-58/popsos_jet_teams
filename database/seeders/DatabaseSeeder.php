@@ -2,25 +2,23 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use database\PermissionSeeder;
-use Database\Seeders\PermissionSeeder as SeedersPermissionSeeder;
-use Database\Seeders\roles_teams_users as roles_teams_users;
 use Illuminate\Database\Seeder;
+use Database\Seeders\PermissionSeeder;
+use Database\Seeders\RolesTeamsUsers;
+use Database\Seeders\RoleRequestSeeder;
+use Database\Seeders\RolesTeamsUsers_Update;
+use Database\Seeders\RolesCreateSeeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
         $this->call([
-        SeedersPermissionSeeder::class,
-        SeedRolesTeamsUsers::class,
-        // Add other seeders here
-    ]);
-
-
+             RolesCreateSeeder::class,
+            PermissionSeeder::class,
+            RolesTeamsUsers::class,
+            RolesTeamsUsers_Update::class,
+            RoleRequestSeeder::class,
+        ]);
     }
 }

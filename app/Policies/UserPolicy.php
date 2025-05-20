@@ -34,11 +34,11 @@ class UserPolicy
         }
 
         if ($user->hasRole('franchise_admin') && in_array($requestedRole, ['franchise_manager', 'franchise_staff'])) {
-            return $user->teams->pluck('id')->intersect($request->franchisee_ids)->isNotEmpty();
+            return $user->teams->pluck('id')->intersect($request->franchise_ids)->isNotEmpty();
         }
 
         if ($user->hasRole('franchise_manager') && $requestedRole === 'franchise_staff') {
-            return $user->teams->pluck('id')->intersect($request->franchisee_ids)->isNotEmpty();
+            return $user->teams->pluck('id')->intersect($request->franchise_ids)->isNotEmpty();
         }
 
         return false;

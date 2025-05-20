@@ -1,0 +1,1 @@
+<h1>Franchises</h1> @foreach($franchises as $f) <div>{{ $f->business_name }}</div> @endforeach

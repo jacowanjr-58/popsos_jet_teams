@@ -27,8 +27,8 @@
         </div>
 
         <div class="mb-4">
-            <label for="franchisee_ids" class="block font-medium">Select Franchise(s)</label>
-            <select name="franchisee_ids[]" id="franchisee_ids" class="w-full p-2 border rounded" multiple required>
+            <label for="franchise_ids" class="block font-medium">Select Franchise(s)</label>
+            <select name="franchise_ids[]" id="franchise_ids" class="w-full p-2 border rounded" multiple required>
                 @foreach($franchisees as $franchise)
                     <option value="{{ $franchise->id }}">{{ $franchise->name }}</option>
                 @endforeach
